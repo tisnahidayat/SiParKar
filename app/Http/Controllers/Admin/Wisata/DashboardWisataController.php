@@ -112,33 +112,33 @@ class DashboardWisataController extends Controller
      */
     public function update(Request $request, Destinasi $wisatum)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'nama' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255',
             'kategori' => 'required|exists:kategoris,id',
             'kecamatan' => 'required|exists:kecamatans,id',
             'deskripsi' => 'required|string',
+            'lokasi' => 'required|string',
             'harga' => 'required|numeric|min:0',
-            'gambar' => 'image|max:5000',
+            'gambar' => 'nullable|image|max:5000',
         ]);
 
-        $data = $request->except('gambar');
+        $validatedData['id_kategori'] = $request->kategori;
+        $validatedData['id_kecamatan'] = $request->kecamatan;
 
         if ($request->hasFile('gambar')) {
             if ($wisatum->gambar) {
-                Storage::delete('public/' . $wisatum->gambar);
+                Storage::delete($wisatum->gambar);
             }
-
-            $file = $request->file('gambar')->store('public/gambar');
-            $data['gambar'] = str_replace('public/', '', $file);
+            $validatedData['gambar'] = $request->file('gambar')->store('gambar');
+        } else {
+            $validatedData['gambar'] = $wisatum->gambar;
         }
 
-        $wisatum->update($data);
+        $wisatum->update($validatedData);
 
         return redirect()->route('wisata.index')->with('success', 'Wisata berhasil diperbarui.');
     }
-
-
 
     /**
      * Remove the specified resource from storage.

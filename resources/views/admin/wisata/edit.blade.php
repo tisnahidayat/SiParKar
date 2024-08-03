@@ -40,8 +40,7 @@
                         <select id="kategori" class="form-control selectric" name="kategori">
                             @foreach ($kategori as $item)
                                 <option value="{{ $item->id }}" @if (old('kategori', $destinasi->kategori->id) == $item->id) selected @endif>
-                                    {{ $item->nama }}
-                                </option>
+                                    {{ $item->nama }}</option>
                             @endforeach
                         </select>
                         @error('kategori')
@@ -52,9 +51,8 @@
                         <label for="kecamatan">Kecamatan</label>
                         <select id="kecamatan" class="form-control select2" name="kecamatan">
                             @foreach ($kecamatan as $item)
-                                <option value="{{ $item->id }}" @if (old('kecamatan', $destinasi->kategori->id) == $item->id) selected @endif>
-                                    {{ $item->nama }}
-                                </option>
+                                <option value="{{ $item->id }}" @if (old('kecamatan', $destinasi->id_kecamatan) == $item->id) selected @endif>
+                                    {{ $item->nama }}</option>
                             @endforeach
                         </select>
                         @error('kecamatan')
@@ -78,7 +76,7 @@
                     <div class="form-group">
                         <label for="harga">Harga</label>
                         <input type="number" id="harga" name="harga" class="form-control"
-                            value="{{ old('harga', number_format($destinasi->harga, 0, ',', '.')) }}" required>
+                            value="{{ old('harga', $destinasi->harga) }}" required>
                         @error('harga')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

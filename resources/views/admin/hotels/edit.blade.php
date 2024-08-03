@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label for="gambar">Gambar</label>
-                        <input type="file" id="gambar" name="gambar" class="form-control" required>
+                        <input type="file" id="gambar" name="gambar" class="form-control">
                     </div>
                     <div class="form-group">
                         @if ($hotel->gambar)

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <img src="img/landscape-2.png" class="image-content" alt="...">
+    <img src="img/bg_kuliner.jpg" class="image-content" alt="...">
     <div class="container mx-auto my-4">
         <div class="row">
             @if ($kuliner->count() > 0)

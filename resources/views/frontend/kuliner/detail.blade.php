@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center align-items-center position-relative">
-        <img src="{{ asset('storage/' . $kuliner->gambar) }}" class="image-content-detail" alt="...">
-        {{-- <h3 class="position-absolute text-danger">Detail Hotel</h3> --}}
+        <img src="{{ asset('img/bg_kuliner.jpg') }}" class="image-content-detail" alt="...">
     </div>
     <div class="container my-4">
         <div class="row">

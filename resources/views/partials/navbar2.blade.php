@@ -12,9 +12,9 @@
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->username }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="features-profile.html" class="dropdown-item has-icon">
+                {{-- <a href="features-profile.html" class="dropdown-item has-icon">
                     <i class="far fa-user me-3"></i> Profile
-                </a>
+                </a> --}}
                 <form action="/logout" method="POST" class="dropdown-item">
                     @csrf
                     <button type="submit" class="btn d-flex align-items-center p-0"

@@ -15,7 +15,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-3 font-weight-bolder {{ Request::is('profil') ? 'active' : '' }}"
-                        href="#">Profil</a>
+                        href="/profil">Profil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-3 font-weight-bolder {{ Route::is('wisata*') ? 'active' : '' }}"

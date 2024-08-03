@@ -48,7 +48,7 @@ class DashboardKulinerController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required|max:15',
+            'nama' => 'required|max:30',
             'deskripsi' => 'required',
             'gambar' => 'required'
         ]);

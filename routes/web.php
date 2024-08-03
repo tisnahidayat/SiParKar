@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\Kuliner\DashboardKulinerController;
 use App\Http\Controllers\Admin\Pengguna\DashboardPenggunaControler;
 use App\Http\Controllers\Admin\Kategori\DashboardKategoriController;
 use App\Http\Controllers\Admin\SeniBudaya\DashboardSeniBudayaController;
+use App\Http\Controllers\Frontend\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,9 @@ use App\Http\Controllers\Admin\SeniBudaya\DashboardSeniBudayaController;
 
 //Beranda
 Route::get('/', [DashboardController::class, 'index'])->name('beranda');
+
+//Profil
+Route::get('/profil', [DashboardController::class, 'profil'])->name('profil');
 
 //Wisata
 Route::get('/wisata', [WisataController::class, 'wisata'])->name('wisata');
@@ -66,8 +70,8 @@ Route::get('/kuliner', [KulinerController::class, 'index'])->name('wisata');
 Route::get('/kuliner/{kuliner:slug}', [KulinerController::class, 'detail'])->name('wisata');
 
 //Blog
-Route::get('/blog', [SeniBudayaController::class, 'index'])->name('wisata');
-Route::get('/blog/{blog:slug}', [SeniBudayaController::class, 'detail'])->name('wisata');
+Route::get('/blog', [BlogController::class, 'index'])->name('wisata');
+Route::get('/blog/{blog:slug}', [BlogController::class, 'detail'])->name('wisata');
 
 //Review Wisata
 Route::middleware(['auth'])->group(function () {

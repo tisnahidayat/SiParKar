@@ -39,7 +39,16 @@ class WisataController extends Controller
             $query->where('id', $request->destinasi);
         }
 
-        $destinasi = $query->paginate(6)->appends($request->query());
+        // Ambil parameter halaman dari query string atau set ke halaman pertama jika tidak ada
+        $currentPage = $request->input('page', 1);
+
+        // Jika ada parameter filter, reset halaman ke 1
+        if ($request->hasAny(['kategori', 'kecamatan', 'destinasi'])) {
+            $currentPage = 1;
+        }
+
+        // Paginate dengan mempertahankan parameter halaman yang sesuai
+        $destinasi = $query->paginate(6, ['*'], 'page', $currentPage);
 
         $data = [
             'title' => 'Wisata',

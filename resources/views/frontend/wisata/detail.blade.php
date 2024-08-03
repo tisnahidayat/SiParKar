@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center align-items-center">
-        <img src="{{ asset('storage/' . $wisata->gambar) }}" class="image-content-detail" alt="...">
+        <img src="{{ asset('img/wisata.jpg') }}" class="image-content-detail" alt="...">
         <div class="card position-absolute p-2 d-flex justify-content-center"
             style="background-color: rgba(255, 255, 255, 0.644);">
             <span class="text-primary font-weight-bold" style="font-size: 25px;">Detail Wisata</span>

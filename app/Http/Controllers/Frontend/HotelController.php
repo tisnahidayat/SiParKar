@@ -30,9 +30,9 @@ class HotelController extends Controller
         }
 
         if ($selectedHotel) {
-            $hotels = Hotel::where('id', $selectedHotel)->paginate(6);
+            $hotels = Hotel::where('id', $selectedHotel)->paginate(9)->withQueryString();
         } else {
-            $hotels = Hotel::paginate(5);
+            $hotels = Hotel::paginate(9);
         }
 
         return view('frontend.hotel.index', [

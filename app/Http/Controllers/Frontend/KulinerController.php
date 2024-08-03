@@ -12,7 +12,7 @@ class KulinerController extends Controller
     {
         $data = [
             'title' => 'Kuliner',
-            'kuliner' => Kuliner::paginate(10)
+            'kuliner' => Kuliner::paginate(12)
         ];
 
         return view('frontend.kuliner.index', $data);

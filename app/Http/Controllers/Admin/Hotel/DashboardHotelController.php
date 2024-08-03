@@ -106,7 +106,7 @@ class DashboardHotelController extends Controller
             'slug' => 'required',
             'deskripsi' => 'required',
             'lokasi' => 'required',
-            'gambar' => 'required|image|max:5000',
+            'gambar' => 'image|max:5000',
         ]);
 
         $data = $request->except('gambar');

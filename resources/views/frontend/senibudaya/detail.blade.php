@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center align-items-center position-relative">
-        <img src="{{ asset('storage/' . $senibudaya->gambar) }}" class="image-content-detail" alt="...">
+        <img src="{{ asset('img/bg_seni.jpg') }}" class="image-content-detail" alt="...">
         {{-- <h3 class="position-absolute text-danger">Detail Hotel</h3> --}}
     </div>
     <div class="container my-4">
@@ -22,17 +22,7 @@
                     </g>
                 </svg>
                 <h3>{{ $senibudaya->nama }}</h3>
-                <p class="indent">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui at commodi minus
-                    aspernatur, obcaecati ipsa
-                    necessitatibus dicta reiciendis modi quasi tenetur, totam, repellat deleniti nostrum tempora
-                    quia saepe?
-                    Doloremque aut est quasi cumque adipisci repudiandae, assumenda quas numquam ratione dicta,
-                    labore
-                    explicabo officia, deleniti ducimus. Dicta.</p>
-                <p class="indent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus beatae inventore saepe
-                    repudiandae? Quod
-                    nobis.
-                    possimus perferendis aspernatur porro hicla.</p>
+                <p class="indent">{{ $senibudaya->deskripsi }}
             </div>
             <div class="col-12 col-lg-6 col-md-6 wrapper-detail">
                 <img src="{{ asset('storage/' . $senibudaya->gambar) }}" class="image-detail" alt="">
